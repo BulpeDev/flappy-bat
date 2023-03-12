@@ -1,25 +1,54 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState, useEffect} from 'react';
 import './App.css';
+import Game from './modules/Game/Game';
+import GameOverMenu from './modules/GameOverMenu/GameOverMenu';
+import StartMenu from './modules/StartMenu/StartMenu';
 
-function App() {
+const App : React.FC =()=> {
+
+  const [score, setScore] = useState<number>(0)
+  const [highScore, setHighScore] = useState<number>(0)
+  const [showStartMenu, setShowStartMenu] = useState<boolean>(true)
+  const [showGameOverMenu, setShowGameOverMenu] = useState<boolean>(false)
+  const [game , setGame] = useState<boolean>(false)
+  const [gameOver, setGameOver] = useState<boolean>(false)
+  
+  useEffect(()=>{
+    if(game)
+      setShowStartMenu(false)
+  },[game])
+
+  useEffect(()=>{
+    if(gameOver && !game){
+      setShowGameOverMenu(true)
+    }
+    else{setShowGameOverMenu(false)}
+    
+    
+  },[game])
+
+
+  const handleStartGame = () : void => {
+    setGame(true)
+  }
+
+  const handleRestartGame= () : void => {
+    setGameOver(false)
+    setGame(true)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {
+        showStartMenu && <StartMenu  onClick ={()=>handleStartGame()} />
+      }
+      {
+        showGameOverMenu &&  <GameOverMenu score={score} highScore={highScore} onClick={()=>handleRestartGame()}/>
+      }
+      <Game game={game} setGame={setGame} gameOver={gameOver} setGameOver={setGameOver} score={score} highScore={highScore} setScore={setScore} setHighScore={setHighScore}/>
+    </>
+   
+  
   );
 }
 
