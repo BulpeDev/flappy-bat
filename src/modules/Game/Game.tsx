@@ -187,7 +187,7 @@ const Game : React.FC<GameProps> = ({game, setGame , gameOver, setGameOver, scor
     return(
 
         <div className='game-box'>
-            <canvas id='game-canvas' width={"400px"} height={"600px"}/>
+            <canvas id='game-canvas' width={"400"} height={"600"}/>
             <div id="score-display">Score: {score}</div>
         </div>
 

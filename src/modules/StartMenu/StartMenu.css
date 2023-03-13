@@ -54,3 +54,135 @@
 .start-menu__button:hover{
     background-color:  rgb(151, 107, 13);
 }
+
+
+
+
+
+@media (max-width: 1440px) { 
+
+    .start-menu__title{
+        font-size: 4rem;    
+        text-shadow: 1rem 1rem 1px rgba(0, 0, 0, 0.568);
+    }
+
+    .start-menu{
+        height: 30vh;
+        width: 30%; 
+    }
+    
+    .start-menu__button{
+        width: 50%;
+        height: 5vh;
+        font-size: 2rem; 
+    }
+    
+    
+}
+
+@media (max-width: 1024px) { 
+
+    .start-menu__title{
+        font-size: 3rem;    
+        text-shadow: 1rem 1rem 1px rgba(0, 0, 0, 0.568);
+    }
+
+    .start-menu{
+        height: 30vh;
+        width: 30%; 
+    }
+    
+    .start-menu__button{
+        width: 50%;
+        height: 5vh;
+        font-size: 1.5rem; 
+    }
+    
+    
+}
+
+@media (max-width: 768px) { 
+
+    .start-menu__title{
+        font-size: 3rem;    
+        text-shadow: 1rem 1rem 1px rgba(0, 0, 0, 0.568);
+    }
+
+    .start-menu{
+        height: 30vh;
+        width: 40%;
+    }
+    
+    .start-menu__button{
+        width: 60%;
+        height: 5vh;
+        font-size: 1.5rem;   
+    }
+    
+    
+}
+
+@media (max-width: 425px) { 
+
+    .start-menu__title{
+        font-size: 2.5rem;    
+        text-shadow: 1rem 1rem 1px rgba(0, 0, 0, 0.568);
+    }
+
+    .start-menu{
+        height: 30vh;
+        width: 60%;
+    }
+    
+    .start-menu__button{
+
+        width: 60%;
+        height: 5vh;
+        font-size: 1.5rem; 
+    }
+    
+    
+}
+
+@media (max-width: 375px) { 
+
+    .start-menu__title{
+        font-size: 2.5rem;    
+        text-shadow: 1rem 1rem 1px rgba(0, 0, 0, 0.568);
+    }
+
+    .start-menu{
+        height: 30vh;
+        width: 70%;  
+    }
+    
+    .start-menu__button{
+
+        width: 60%;
+        height: 5vh;
+        font-size: 1.5rem;
+    }
+    
+    
+}
+
+@media (max-width: 320px) { 
+
+    .start-menu__title{
+        font-size: 2.5rem;    
+        text-shadow: 1rem 1rem 1px rgba(0, 0, 0, 0.568);
+    }
+
+    .start-menu{
+        height: 30vh;
+        width: 80%;  
+    }
+    
+    .start-menu__button{
+        width: 60%;
+        height: 5vh;
+        font-size: 1.5rem;
+    }
+    
+    
+}

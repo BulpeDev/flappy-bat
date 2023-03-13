@@ -71,3 +71,160 @@
     background-color:  rgb(151, 107, 13);
 }
 
+@media (max-width: 1440px) { 
+
+    .gameover-menu__title{
+        font-size: 4rem;    
+        text-shadow: 1rem 1rem 1px rgba(0, 0, 0, 0.568);
+    }
+
+    .gameover-menu__scores {
+
+        font-size: large;
+    }
+
+    .gameover-menu{
+        height: 30vh;
+        width: 30%; 
+    }
+    
+    .gameover-menu__button{
+        width: 50%;
+        height: 5vh;
+        font-size: 2rem; 
+    }
+    
+    
+}
+
+@media (max-width: 1024px) { 
+
+    .gameover-menu__title{
+        font-size: 3rem;    
+        text-shadow: 1rem 1rem 1px rgba(0, 0, 0, 0.568);
+    }
+
+    .gameover-menu__scores {
+
+        font-size: large;
+    }
+
+    .gameover-menu{
+        height: 30vh;
+        width: 30%; 
+    }
+    
+    .gameover-menu__button{
+        width: 50%;
+        height: 5vh;
+        font-size: 1.4rem; 
+    }
+    
+    
+}
+
+@media (max-width: 768px) { 
+
+    .gameover-menu__title{
+        font-size: 3rem;    
+        text-shadow: 1rem 1rem 1px rgba(0, 0, 0, 0.568);
+    }
+
+    .gameover-menu__scores {
+
+        font-size: large;
+    }
+
+    .gameover-menu{
+        height: 30vh;
+        width: 40%;
+    }
+    
+    .gameover-menu__button{
+        width: 50%;
+        height: 5vh;
+        font-size: 1.4rem;   
+    }
+    
+    
+}
+
+@media (max-width: 425px) { 
+
+    .gameover-menu__title{
+        font-size: 2.5rem;    
+        text-shadow: 1rem 1rem 1px rgba(0, 0, 0, 0.568);
+    }
+
+    .gameover-menu__scores {
+
+        font-size: large;
+    }
+
+    .gameover-menu{
+        height: 30vh;
+        width: 60%;
+    }
+    
+    .gameover-menu__button{
+
+        width: 60%;
+        height: 5vh;
+        font-size: 1.3rem;
+    }
+    
+    
+}
+
+@media (max-width: 375px) { 
+
+    .gameover-menu__title{
+        font-size: 2.5rem;    
+        text-shadow: 1rem 1rem 1px rgba(0, 0, 0, 0.568);
+    }
+
+    .gameover-menu__scores {
+
+        font-size: large;
+    }
+
+    .gameover-menu{
+        height: 30vh;
+        width: 70%;  
+    }
+    
+    .gameover-menu__button{
+
+        width: 60%;
+        height: 5vh;
+        font-size: 1.3rem;
+    }
+    
+    
+}
+
+@media (max-width: 320px) { 
+
+    .gameover-menu__title{
+        font-size: 2.5rem;    
+        text-shadow: 1rem 1rem 1px rgba(0, 0, 0, 0.568);
+    }
+
+    .gameover-menu__scores {
+
+        font-size: large;
+    }
+
+    .gameover-menu{
+        height: 30vh;
+        width: 80%;  
+    }
+    
+    .gameover-menu__button{
+        width: 60%;
+        height: 5vh;
+        font-size: 1.3rem;
+    }
+    
+    
+}

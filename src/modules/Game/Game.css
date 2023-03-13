@@ -5,13 +5,21 @@ canvas {
     width: 400px;
     border-radius: 10px;
     display: block;
-    margin: 50px auto;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     background-image: url('/public/storage/images/game-background.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     /* we will make the end menu overlap the game canvas, so we need here a lower z-index */
     z-index: 1;
+}
+
+.game-box{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #score-display {
@@ -21,3 +29,45 @@ canvas {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+
+@media (max-width: 1440px) { 
+
+    canvas{
+        width: 300px;
+        height: 600px;
+    }
+    
+    
+}
+
+@media (max-width: 1024px) { 
+
+
+    
+}
+
+@media (max-width: 768px) { 
+
+
+    
+    
+}
+
+@media (max-width: 425px) { 
+
+    
+    
+}
+
+@media (max-width: 375px) { 
+
+
+    
+}
+
+@media (max-width: 320px) { 
+
+  
+    
+    
+}
