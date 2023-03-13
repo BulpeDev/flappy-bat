@@ -36,7 +36,7 @@ const Game : React.FC<GameProps> = ({game, setGame , gameOver, setGameOver, scor
     let scored = false;
 
     //Games Constant
-    const FLAP_SPEED  = -5;
+    const FLAP_SPEED  = -10;
     const BAT_WIDTH = 122;
     const BAT_HEIGHT = 77                        
     const PIPE_WIDTH = 50;
@@ -167,7 +167,7 @@ const Game : React.FC<GameProps> = ({game, setGame , gameOver, setGameOver, scor
             if (collisionCheck()) {
                 endGame();
                 return;
-            }
+            }   
             pipeX -= 1.5;
             if (pipeX < -50) {
                 pipeX = 400;
@@ -187,7 +187,7 @@ const Game : React.FC<GameProps> = ({game, setGame , gameOver, setGameOver, scor
     return(
 
         <div className='game-box'>
-            <canvas id='game-canvas' width={"400"} height={"600"}/>
+            <canvas id='game-canvas' width={"400px"} height={"600px"}/>
             <div id="score-display">Score: {score}</div>
         </div>
 
