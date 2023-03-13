@@ -40,7 +40,7 @@ const Game : React.FC<GameProps> = ({game, setGame , gameOver, setGameOver, scor
     const BAT_WIDTH = 122;
     const BAT_HEIGHT = 77                        
     const PIPE_WIDTH = 50;
-    const PIPE_GAP = 200;
+    const PIPE_GAP = 175;
 
     
 
