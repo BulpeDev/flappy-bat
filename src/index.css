@@ -21,6 +21,35 @@
 }
 
 body {
-    font-family: "Roboto", "Helvetica Neue";
-    background-image: linear-gradient(to right, rgb(94, 94, 94), rgb(6, 6, 7));
+ 
+    background-color:  rgb(94, 94, 94);
+}
+
+
+@media (max-width: 425px) { 
+
+  body {
+  
+    background-color:  rgb(94, 94, 94);
+}
+  
+}
+
+@media (max-width: 375px) { 
+
+  body {
+   
+    background-color:  rgb(94, 94, 94);
+}
+  
+}
+
+@media (max-width: 320px) { 
+
+ 
+  body {
+ 
+    background-color:  rgb(94, 94, 94);
+}
+  
 }
