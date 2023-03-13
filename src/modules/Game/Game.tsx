@@ -65,7 +65,10 @@ const Game : React.FC<GameProps> = ({game, setGame , gameOver, setGameOver, scor
                 batdVelocity = FLAP_SPEED    
             }
         }
-    
+        document.body.ontouchstart =(e : TouchEvent) =>{
+            batdVelocity = FLAP_SPEED
+        }
+
     },[game])
 
  
@@ -102,8 +105,7 @@ const Game : React.FC<GameProps> = ({game, setGame , gameOver, setGameOver, scor
             // Check for collision with upper pipe box
             if (batBox.x + batBox.width > topPipeBox.x &&
                 batBox.x < topPipeBox.x + topPipeBox.width &&
-                batBox.y < topPipeBox.y) {
-                    console.log("me rompo1")
+                batBox.y < topPipeBox.y) { 
                     return true;
             }
         
@@ -111,13 +113,11 @@ const Game : React.FC<GameProps> = ({game, setGame , gameOver, setGameOver, scor
             if (batBox.x + batBox.width > bottomPipeBox.x &&
                 batBox.x < bottomPipeBox.x + bottomPipeBox.width &&
                 batBox.y + batBox.height > bottomPipeBox.y) {
-                    console.log("me rompo2")
                     return true;
             }
         
             // check if bird hits boundaries
             if (batY < 0 || batY + BAT_HEIGHT > canvas.height) {
-                console.log("me rompo3")
                 return true;
             }
         
@@ -160,7 +160,7 @@ const Game : React.FC<GameProps> = ({game, setGame , gameOver, setGameOver, scor
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx.drawImage(batImg, batX, batY);
 
-            ctx.fillStyle = '#242424'         
+            ctx.fillStyle = '#11111b'         
             ctx.fillRect(pipeX, -100, PIPE_WIDTH, pipeY);
             ctx.fillRect(pipeX, pipeY + PIPE_GAP, PIPE_WIDTH, canvas.height - pipeY);
             
@@ -173,9 +173,10 @@ const Game : React.FC<GameProps> = ({game, setGame , gameOver, setGameOver, scor
                 pipeX = 400;
                 pipeY = Math.random() * (canvas.height - PIPE_GAP) + PIPE_WIDTH;
             }
-            
+          
             batdVelocity += batdAcceleration;
             batY += batdVelocity;
+
             increaseScore()
             requestAnimationFrame(loop);
         }   
