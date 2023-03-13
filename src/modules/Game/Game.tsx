@@ -28,7 +28,7 @@ const Game : React.FC<GameProps> = ({game, setGame , gameOver, setGameOver, scor
     let batY : number = 50;
     let batdVelocity : number = 0;
     let batdAcceleration : number = 0.1;
-    
+
     //Pipe variabl
     let pipeX  = 400;
     let pipeY : number; 
@@ -154,35 +154,38 @@ const Game : React.FC<GameProps> = ({game, setGame , gameOver, setGameOver, scor
         }
     }
 
+    
+
     const loop = () : void  =>{
 
         if(canvas instanceof HTMLCanvasElement && ctx instanceof CanvasRenderingContext2D){
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.drawImage(batImg, batX, batY);
-
-            ctx.fillStyle = '#11111b'         
-            ctx.fillRect(pipeX, -100, PIPE_WIDTH, pipeY);
-            ctx.fillRect(pipeX, pipeY + PIPE_GAP, PIPE_WIDTH, canvas.height - pipeY);
-            
-            if (collisionCheck()) {
-                endGame();
-                return;
-            }   
-            pipeX -= 1.5;
-            if (pipeX < -50) {
-                pipeX = 400;
-                pipeY = Math.random() * (canvas.height - PIPE_GAP) + PIPE_WIDTH;
-            }
           
-            batdVelocity += batdAcceleration;
-            batY += batdVelocity;
-
-            increaseScore()
-            requestAnimationFrame(loop);
-        }   
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.drawImage(batImg, batX, batY);
     
-           
-
+                ctx.fillStyle = '#11111b'         
+                ctx.fillRect(pipeX, -100, PIPE_WIDTH, pipeY);
+                ctx.fillRect(pipeX, pipeY + PIPE_GAP, PIPE_WIDTH, canvas.height - pipeY);
+                
+                if (collisionCheck()) {
+                    endGame();
+                    return;
+                }   
+                pipeX -= 1.5;
+                if (pipeX < -50) {
+                    pipeX = 400;
+                    pipeY = Math.random() * (canvas.height - PIPE_GAP) + PIPE_WIDTH;
+                }
+              
+                batdVelocity += batdAcceleration;
+                batY += batdVelocity;
+    
+                increaseScore()
+                setTimeout(() =>{
+                    requestAnimationFrame(loop);
+                },1000/120)
+                
+        }   
     }
     return(
 
