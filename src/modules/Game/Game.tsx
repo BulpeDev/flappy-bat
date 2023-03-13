@@ -29,14 +29,14 @@ const Game : React.FC<GameProps> = ({game, setGame , gameOver, setGameOver, scor
     let batdVelocity : number = 0;
     let batdAcceleration : number = 0.1;
     
-    //Pipe variables
+    //Pipe variabl
     let pipeX  = 400;
     let pipeY : number; 
 
     let scored = false;
 
     //Games Constant
-    const FLAP_SPEED  = -10;
+    const FLAP_SPEED  = -5;
     const BAT_WIDTH = 122;
     const BAT_HEIGHT = 77                        
     const PIPE_WIDTH = 50;
