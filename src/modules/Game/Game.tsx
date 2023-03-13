@@ -27,16 +27,16 @@ const Game : React.FC<GameProps> = ({game, setGame , gameOver, setGameOver, scor
     let batX : number = 50;
     let batY : number = 50;
     let batdVelocity : number = 0;
-    let batdAcceleration : number = 0.1;
+    let batdAcceleration : number = 0.5;
     
-    //Pipe variables
+    //Pipe variabl
     let pipeX  = 400;
     let pipeY : number; 
 
     let scored = false;
 
     //Games Constant
-    const FLAP_SPEED  = -5;
+    const FLAP_SPEED  = -10;
     const BAT_WIDTH = 122;
     const BAT_HEIGHT = 77                        
     const PIPE_WIDTH = 50;
@@ -48,7 +48,7 @@ const Game : React.FC<GameProps> = ({game, setGame , gameOver, setGameOver, scor
         batX = 50;
         batY = 50;
         batdVelocity = 0;
-        batdAcceleration = 0.1;
+        batdAcceleration = 0.5;
     }
    
     useEffect(() =>{
@@ -168,7 +168,7 @@ const Game : React.FC<GameProps> = ({game, setGame , gameOver, setGameOver, scor
                 endGame();
                 return;
             }
-            pipeX -= 1.5;
+            pipeX -= 4;
             if (pipeX < -50) {
                 pipeX = 400;
                 pipeY = Math.random() * (canvas.height - PIPE_GAP) + PIPE_WIDTH;
