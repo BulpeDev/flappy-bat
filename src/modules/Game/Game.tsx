@@ -42,7 +42,9 @@ const Game : React.FC<GameProps> = ({game, setGame , gameOver, setGameOver, scor
     const PIPE_WIDTH = 50;
     const PIPE_GAP = 175;
 
-    
+    let gameSpeed = 1000 / 120;
+    let gameInterval : any;
+
 
     const resetGame = () : void => {
         batX = 50;
@@ -75,9 +77,10 @@ const Game : React.FC<GameProps> = ({game, setGame , gameOver, setGameOver, scor
     useEffect(()=>{
         if(game && !gameOver){
             resetGame();
-            loop();
         }
     },[game])
+
+    useEffect(()=>{ gameOver && clearInterval(gameInterval)},[gameOver])
 
     const collisionCheck = () : boolean =>{
         if(canvas instanceof HTMLCanvasElement){
@@ -169,6 +172,7 @@ const Game : React.FC<GameProps> = ({game, setGame , gameOver, setGameOver, scor
                 
                 if (collisionCheck()) {
                     endGame();
+                    clearInterval(gameInterval)
                     return;
                 }   
                 pipeX -= 1.5;
@@ -182,12 +186,13 @@ const Game : React.FC<GameProps> = ({game, setGame , gameOver, setGameOver, scor
     
                 increaseScore()
                 //para controlar los fotogramas
-                setTimeout(() =>{
-                    requestAnimationFrame(loop);
-                },1000/120)
-                
+
         }   
     }
+
+    gameInterval = setInterval(loop, gameSpeed);
+   
+
     return(
 
         <div className='game-box'>
