@@ -26,14 +26,15 @@ const Game : React.FC<GameProps> = ({game, setGame , gameOver, setGameOver, scor
     //Bat variables
     let batX : number = 50;
     let batY : number = 50;
-    let batdVelocity : number = 0;
-    let batdAcceleration : number = 0.1;
+    let batVelocity : number = 0;
+    let batAcceleration : number = 0.1;
 
     //Pipe variabl
     let pipeX  = 400;
     let pipeY : number; 
 
     let scored = false;
+    let lastTime = 0;
 
     //Games Constant
     const FLAP_SPEED  = -5;
@@ -47,8 +48,8 @@ const Game : React.FC<GameProps> = ({game, setGame , gameOver, setGameOver, scor
     const resetGame = () : void => {
         batX = 50;
         batY = 50;
-        batdVelocity = 0;
-        batdAcceleration = 0.1;
+        batVelocity = 0;
+        batAcceleration = 0.1;
     }
    
     useEffect(() =>{
@@ -62,11 +63,11 @@ const Game : React.FC<GameProps> = ({game, setGame , gameOver, setGameOver, scor
         batImg.src = `${process.env.PUBLIC_URL}/storage/images/bat.png`;
         document.body.onkeyup = (e: KeyboardEvent) =>{
             if(e.code === "Space"){
-                batdVelocity = FLAP_SPEED    
+                batVelocity = FLAP_SPEED    
             }
         }
         document.body.ontouchstart =(e : TouchEvent) =>{
-            batdVelocity = FLAP_SPEED
+            batVelocity = FLAP_SPEED
         }
 
     },[game])
@@ -75,9 +76,10 @@ const Game : React.FC<GameProps> = ({game, setGame , gameOver, setGameOver, scor
     useEffect(()=>{
         if(game && !gameOver){
             resetGame();
-            loop();
+            requestAnimationFrame(loop);
         }
     },[game])
+
 
     const collisionCheck = () : boolean =>{
         if(canvas instanceof HTMLCanvasElement){
@@ -156,10 +158,12 @@ const Game : React.FC<GameProps> = ({game, setGame , gameOver, setGameOver, scor
 
     
 
-    const loop = () : void  =>{
+    const loop = (currentTime: number) : void  =>{
 
         if(canvas instanceof HTMLCanvasElement && ctx instanceof CanvasRenderingContext2D){
-          
+                const deltaTime = (currentTime - lastTime) / 1000; // calcular tiempo transcurrido
+                lastTime = currentTime; // actualizar lastTime
+            
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
                 ctx.drawImage(batImg, batX, batY);
     
@@ -171,19 +175,20 @@ const Game : React.FC<GameProps> = ({game, setGame , gameOver, setGameOver, scor
                     endGame();
                     return;
                 }   
-                pipeX -= 1.5;
+                pipeX -= 150 * deltaTime;
                 if (pipeX < -50) {
                     pipeX = 400;
                     pipeY = Math.random() * (canvas.height - PIPE_GAP) + PIPE_WIDTH;
                 }
               
-                batdVelocity += batdAcceleration;
-                batY += batdVelocity;
+                batVelocity += batAcceleration;
+                batY += batVelocity;
     
                 increaseScore()
-                setTimeout(() =>{
-                    requestAnimationFrame(loop);
-                },1000/120)
+                //para controlar los fotogramas
+                console.log(batVelocity)
+                requestAnimationFrame(loop);
+             
                 
         }   
     }
