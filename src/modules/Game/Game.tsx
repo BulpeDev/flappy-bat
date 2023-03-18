@@ -45,16 +45,29 @@ const Game : React.FC<GameProps> = ({game, setGame , gameOver, setGameOver, scor
     let gameSpeed = 1000 / 120;
     let gameInterval : any;
 
+    //audios
+
+    const scoreAudio : HTMLAudioElement = new Audio(`${process.env.PUBLIC_URL}/storage/sound/score.mp3`);
+    const flapAudio : HTMLAudioElement = new Audio(`${process.env.PUBLIC_URL}/storage/sound/flap.mp3`);
+    const failAudio : HTMLAudioElement = new Audio(`${process.env.PUBLIC_URL}/storage/sound/fail.mp3`);
+    const soundtrack : HTMLAudioElement = new Audio(`${process.env.PUBLIC_URL}/storage/sound/cave-9207.mp3`);
+    
+    soundtrack.volume = 0.6;
+    flapAudio.volume = 1;
+    let flapPlaying = false;
+    soundtrack.loop = true;
+    
 
     const resetGame = () : void => {
         batX = 50;
         batY = 50;
         batdVelocity = 0;
         batdAcceleration = 0.1;
+        setScore(0)
     }
    
     useEffect(() =>{
-
+       
         if(canvas instanceof HTMLCanvasElement){
             ctx = canvas.getContext("2d");
             pipeY = canvas.height - 200;
@@ -64,11 +77,27 @@ const Game : React.FC<GameProps> = ({game, setGame , gameOver, setGameOver, scor
         batImg.src = `${process.env.PUBLIC_URL}/storage/images/bat.png`;
         document.body.onkeyup = (e: KeyboardEvent) =>{
             if(e.code === "Space"){
-                batdVelocity = FLAP_SPEED    
+                batdVelocity = FLAP_SPEED
+            }
+        }
+        document.body.onkeydown= (e: KeyboardEvent) =>{
+            if(e.code === "Space" && game){
+                if(!flapPlaying){
+                    flapAudio.currentTime = 0;
+                    flapAudio.play();
+                    flapPlaying = true;
+                }
+                else {
+                    flapAudio.pause();
+                    flapAudio.currentTime = 0;
+                    flapAudio.play();
+                    flapPlaying = false;
+                }
             }
         }
         document.body.ontouchstart =(e : TouchEvent) =>{
             batdVelocity = FLAP_SPEED
+            flapAudio.play();
         }
 
     },[game])
@@ -77,6 +106,7 @@ const Game : React.FC<GameProps> = ({game, setGame , gameOver, setGameOver, scor
     useEffect(()=>{
         if(game && !gameOver){
             resetGame();
+            soundtrack.play();
         }
     },[game])
 
@@ -109,6 +139,7 @@ const Game : React.FC<GameProps> = ({game, setGame , gameOver, setGameOver, scor
             if (batBox.x + batBox.width > topPipeBox.x &&
                 batBox.x < topPipeBox.x + topPipeBox.width &&
                 batBox.y < topPipeBox.y) { 
+                    failAudio.play();
                     return true;
             }
         
@@ -117,11 +148,13 @@ const Game : React.FC<GameProps> = ({game, setGame , gameOver, setGameOver, scor
                 batBox.x < bottomPipeBox.x + bottomPipeBox.width &&
                 batBox.y + batBox.height >= bottomPipeBox.y) {
                     console.log(batBox.y + batBox.height , bottomPipeBox.y)
+                    failAudio.play();
                     return true;
             }
         
             // check if bird hits boundaries
             if (batY < 0 || batY + BAT_HEIGHT > canvas.height) {
+                failAudio.play();
                 return true;
             }
         
@@ -134,8 +167,8 @@ const Game : React.FC<GameProps> = ({game, setGame , gameOver, setGameOver, scor
     }
 
     const endGame = () => {
+        soundtrack.pause();
         if(score > highScore) setHighScore(score)
-        setScore(0)
         setGame(false)
         setGameOver(true)
     }
@@ -147,6 +180,7 @@ const Game : React.FC<GameProps> = ({game, setGame , gameOver, setGameOver, scor
             (batY < pipeY + PIPE_GAP || 
               batY + BAT_HEIGHT > pipeY + PIPE_GAP) && 
               !scored) {
+            scoreAudio.play();
             score++;
             setScore(score)
             scored = true;
@@ -158,7 +192,6 @@ const Game : React.FC<GameProps> = ({game, setGame , gameOver, setGameOver, scor
         }
     }
 
-    
 
     const loop = () : void  =>{
 
