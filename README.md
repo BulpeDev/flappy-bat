@@ -1,46 +1,58 @@
-# Getting Started with Create React App
+ # Flappy Bat 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+Flappy Bat es un videojuego desarrollado en TypeScript y React, inspirado en el clásico Flappy Bird. En este juego, el jugador controla a un murciélago que debe volar a través de una serie de obstáculos sin chocar contra ellos.
 
-In the project directory, you can run:
 
-### `npm start`
+# GamePlay
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![image](https://user-images.githubusercontent.com/80599594/226109937-c7fb3343-b0d9-4fde-9ba0-4f4499e6f8f3.png)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ ## Tecnologías
 
-### `npm run build`
+Flappy Bat se desarrolló utilizando las siguientes tecnologías:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+-   TypeScript: lenguaje de programación para JavaScript que añade tipado estático
+-   React: biblioteca de JavaScript para construir interfaces de usuario 
+-   Canvas: API de HTML5 para dibujar gráficos y animaciones en el navegador
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Cómo jugar
 
-### `npm run eject`
+El objetivo del juego es volar el mayor tiempo posible sin chocar contra los obstáculos. El jugador controla al murciélago haciendo clic o tocando la pantalla, lo que hace que el murciélago salte. El murciélago cae automáticamente, por lo que el jugador debe hacer clic o tocar la pantalla en el momento adecuado para evitar los obstáculos.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Cómo ejecutar el juego
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Para ejecutar el juego en tu máquina local, sigue estos pasos:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+1.  Clona este repositorio en tu máquina local
+2.  Abre una terminal en la carpeta del proyecto y ejecuta el comando `npm install` para instalar las dependencias
+3.  Ejecuta el comando `npm start` para iniciar el servidor de desarrollo
+4.  Abre tu navegador web en `http://localhost:3000` para jugar el juego
 
-## Learn More
+## Contribuir
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Si deseas contribuir al proyecto, sigue estos pasos:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1.  Haz un fork de este repositorio
+2.  Clona tu fork en tu máquina local
+3.  Crea una nueva rama para tus cambios con `git checkout -b mi-rama`
+4.  Haz tus cambios y realiza los commit correspondientes
+5.  Envía tus cambios al repositorio remoto con `git push origin mi-rama`
+6.  Crea un pull request para solicitar la inclusión de tus cambios en el proyecto
+
+
+## Autor
+
+-   Alberto Bulpe Martínez / BulpeDev
+-   Correo electrónico: [albertobulpemartinez@gmail.com](mailto:albertobulpemartinez@gmail.com)
+-   Perfil de LinkedIn: [https://www.linkedin.com/in/alberto-bulpe/](https://www.linkedin.com/in/alberto-bulpe/)
+
+Hola, mi nombre es Alberto Bulpe Martínez, y soy un desarrollador de aplicaciones web con 2 años de experiencia. Me apasiona crear soluciones digitales que ayuden a las personas a alcanzar sus objetivos, y tengo habilidades en varios lenguajes de programación, incluyendo TypeScript, React, y otras tecnologías web. Me encanta colaborar en proyectos  y me siento agradecido por la oportunidad de presentar mi trabajo en mi portafolio. ¡Gracias por revisar mi proyecto!
+
+## Licencia
+
+Este proyecto está bajo la licencia MIT. Consulta el archivo `LICENSE` para obtener más información.
