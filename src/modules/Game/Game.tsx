@@ -97,12 +97,12 @@ const Game : React.FC<GameProps> = ({game, setGame , gameOver, setGameOver, scor
         }
         document.body.ontouchstart =(e : TouchEvent) =>{
             batdVelocity = FLAP_SPEED
-            if(!flapPlaying){
+            if(!flapPlaying && game){
                 flapAudio.currentTime = 0;
                 flapAudio.play();
                 flapPlaying = true;
             }
-            else {
+            if(flapPlaying && game) {
                 flapAudio.pause();
                 flapAudio.currentTime = 0;
                 flapAudio.play();
