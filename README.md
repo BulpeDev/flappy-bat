@@ -1,46 +1,38 @@
-# Getting Started with Create React App
+Flappy Bat
+Flappy Bat es un videojuego desarrollado en TypeScript y React, inspirado en el clásico Flappy Bird. En este juego, el jugador controla a un murciélago que debe volar a través de una serie de obstáculos sin chocar contra ellos.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Flappy Bat Gameplay
 
-## Available Scripts
+Tecnologías
+Flappy Bat se desarrolló utilizando las siguientes tecnologías:
 
-In the project directory, you can run:
+TypeScript: lenguaje de programación para JavaScript que añade tipado estático
+React: biblioteca de JavaScript para construir interfaces de usuario
+Canvas: API de HTML5 para dibujar gráficos y animaciones en el navegador
+Cómo jugar
+El objetivo del juego es volar el mayor tiempo posible sin chocar contra los obstáculos. El jugador controla al murciélago haciendo clic o tocando la pantalla, lo que hace que el murciélago salte. El murciélago cae automáticamente, por lo que el jugador debe hacer clic o tocar la pantalla en el momento adecuado para evitar los obstáculos.
 
-### `npm start`
+Cómo ejecutar el juego
+Para ejecutar el juego en tu máquina local, sigue estos pasos:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Clona este repositorio en tu máquina local
+Abre una terminal en la carpeta del proyecto y ejecuta el comando npm install para instalar las dependencias
+Ejecuta el comando npm start para iniciar el servidor de desarrollo
+Abre tu navegador web en http://localhost:3000 para jugar el juego
+Contribuir
+Si deseas contribuir al proyecto, sigue estos pasos:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Haz un fork de este repositorio
+Clona tu fork en tu máquina local
+Crea una nueva rama para tus cambios con git checkout -b mi-rama
+Haz tus cambios y realiza los commit correspondientes
+Envía tus cambios al repositorio remoto con git push origin mi-rama
+Crea un pull request para solicitar la inclusión de tus cambios en el proyecto
+Autor
+Alberto Bulpe Martínez
+Correo electrónico: albertobulpemartinez@gmail.com
+Perfil de LinkedIn: https://www.linkedin.com/in/alberto-bulpe/
+Hola, mi nombre es Alberto Bulpe Martínez, y soy un desarrollador de aplicaciones web con 2 años de experiencia. Me apasiona crear soluciones digitales que ayuden a las personas a alcanzar sus objetivos, y tengo habilidades en varios lenguajes de programación, incluyendo TypeScript, React, y otras tecnologías web. Me encanta colaborar en proyectos emocionantes como Flappy Bat, y me siento agradecido por la oportunidad de presentar mi trabajo en mi portafolio. ¡Gracias por revisar mi proyecto!
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Licencia
+Este proyecto está bajo la licencia MIT. Consulta el archivo LICENSE para obtener más información.
