@@ -100,7 +100,7 @@ const Game : React.FC<GameProps> = ({game, setGame , gameOver, setGameOver, scor
         
             const bottomPipeBox = {
                 x: pipeX,
-                y: pipeY + PIPE_GAP + BAT_HEIGHT,
+                y: pipeY + PIPE_GAP ,
                 width: PIPE_WIDTH,
                 height: canvas.height - pipeY - PIPE_GAP
             }
@@ -115,7 +115,8 @@ const Game : React.FC<GameProps> = ({game, setGame , gameOver, setGameOver, scor
             // Check for collision with lower pipe box
             if (batBox.x + batBox.width > bottomPipeBox.x &&
                 batBox.x < bottomPipeBox.x + bottomPipeBox.width &&
-                batBox.y + batBox.height > bottomPipeBox.y) {
+                batBox.y + batBox.height >= bottomPipeBox.y) {
+                    console.log(batBox.y + batBox.height , bottomPipeBox.y)
                     return true;
             }
         
