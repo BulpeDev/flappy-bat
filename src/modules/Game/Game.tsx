@@ -4,8 +4,8 @@ import  {BoxCollider}  from './Game.types';
 
 
 interface GameProps{
-    score: number;
     highScore: number;
+    score: number;
     setScore : React.Dispatch<SetStateAction<number>>;
     setHighScore : React.Dispatch<SetStateAction<number>>;
     game : boolean;
@@ -15,10 +15,11 @@ interface GameProps{
 
 }
 
-const Game : React.FC<GameProps> = ({game, setGame , gameOver, setGameOver, score = 0, highScore, setScore, setHighScore}) =>{
+const Game : React.FC<GameProps> = ({game, setGame , gameOver, score, setGameOver, highScore, setScore, setHighScore}) =>{
+
+
 
     const canvasRef = useRef<HTMLCanvasElement>(null)
-    
     let canvas : HTMLCanvasElement | null = document.querySelector('#game-canvas')
     let ctx: CanvasRenderingContext2D | null;
     const batImg : HTMLImageElement = new Image();
@@ -63,7 +64,8 @@ const Game : React.FC<GameProps> = ({game, setGame , gameOver, setGameOver, scor
         batY = 50;
         batdVelocity = 0;
         batdAcceleration = 0.1;
-        setScore(0)
+        score = 0;
+        setScore(0);
     }
    
     useEffect(() =>{

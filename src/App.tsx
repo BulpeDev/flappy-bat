@@ -45,7 +45,7 @@ const App : React.FC =()=> {
       {
         showGameOverMenu &&  <GameOverMenu score={score} highScore={highScore} onClick={()=>handleRestartGame()}/>
       }
-      <Game game={game} setGame={setGame} gameOver={gameOver} setGameOver={setGameOver} score={score} highScore={highScore} setScore={setScore} setHighScore={setHighScore}/>
+      <Game game={game} setGame={setGame} gameOver={gameOver} setGameOver={setGameOver}  highScore={highScore} score={score} setScore={setScore} setHighScore={setHighScore}/>
     </>
    
   
